@@ -1,11 +1,12 @@
 from tkinter import *
+from tkinter.scrolledtext import ScrolledText
 import tkinter.messagebox
 import random
 import time
 import datetime
 #========================== GUI CONFIGURATION ===========================#
 root = Tk()
-root.geometry("1350x750+0+0")
+root.geometry("1350x750+80+20")
 root.title("Restaurant Management System")
 root.configure(background = "cadet blue")
 root.resizable(0,0)
@@ -108,7 +109,7 @@ def chkFanta():
         txtFanta.configure(state=NORMAL)
         txtFanta.focus()
         txtFanta.delete("0",END)
-        E_Fanta.set("0")
+        E_Fanta.set("")
     elif(var1.get() == 0):
         txtFanta.configure(state=DISABLED)
         E_Fanta.set("0")
@@ -117,7 +118,7 @@ def chkLimca():
         txtLimca.configure(state=NORMAL)
         txtLimca.focus()
         txtLimca.delete("0",END)
-        E_Limca.set("0")
+        E_Limca.set("")
     elif(var2.get() == 0):
         txtLimca.configure(state=DISABLED)
         E_Limca.set("0")
@@ -126,7 +127,7 @@ def chkCocaCola():
         txtCocaCola.configure(state=NORMAL)
         txtCocaCola.focus()
         txtCocaCola.delete("0",END)
-        E_CocaCola.set("0")
+        E_CocaCola.set("")
     elif(var3.get() == 0):
         txtCocaCola.configure(state=DISABLED)
         E_CocaCola.set("0")
@@ -135,7 +136,7 @@ def chkPepsi():
         txtPepsi.configure(state=NORMAL)
         txtPepsi.focus()
         txtPepsi.delete("0",END)
-        E_Pepsi.set("0")
+        E_Pepsi.set("")
     elif(var4.get() == 0):
         txtPepsi.configure(state=DISABLED)
         E_Pepsi.set("0")
@@ -144,7 +145,7 @@ def chkThumbsUp():
         txtThumbsUp.configure(state=NORMAL)
         txtThumbsUp.focus()
         txtThumbsUp.delete("0",END)
-        E_ThumbsUp.set("0")
+        E_ThumbsUp.set("")
     elif(var5.get() == 0):
         txtThumbsUp.configure(state=DISABLED)
         E_ThumbsUp.set("0")
@@ -153,7 +154,7 @@ def chkCoffee():
         txtCoffee.configure(state=NORMAL)
         txtCoffee.focus()
         txtCoffee.delete("0",END)
-        E_Coffee.set("0")
+        E_Coffee.set("")
     elif(var6.get() == 0):
         txtCoffee.configure(state=DISABLED)
         E_Coffee.set("0")
@@ -162,7 +163,7 @@ def chkTea():
         txtTea.configure(state=NORMAL)
         txtTea.focus()
         txtTea.delete("0",END)
-        E_Tea.set("0")
+        E_Tea.set("")
     elif(var7.get() == 0):
         txtTea.configure(state=DISABLED)
         E_Tea.set("0")
@@ -171,7 +172,7 @@ def chkBeer():
         txtBeer.configure(state=NORMAL)
         txtBeer.focus()
         txtBeer.delete("0",END)
-        E_Beer.set("0")
+        E_Beer.set("")
     elif(var8.get() == 0):
         txtBeer.configure(state=DISABLED)
         E_Beer.set("0")
@@ -188,21 +189,21 @@ Coffee = Checkbutton(Drinks_F,text="Coffee  ",variable=var6,onvalue=1,offvalue=0
 Tea = Checkbutton(Drinks_F,text="Tea  ",variable=var7,onvalue=1,offvalue=0,font = ("arial",18,"bold"),bg="powder blue",command=chkTea).grid(row=6,sticky=W)
 Beer = Checkbutton(Drinks_F,text="Beer  ",variable=var8,onvalue=1,offvalue=0,font = ("arial",18,"bold"),bg="powder blue",command=chkBeer).grid(row=7,sticky=W)
 #======================== ENTRY BOX FOR DRINKS =========================#
-txtFanta = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=6,justify=LEFT,state=DISABLED,textvariable=E_Fanta)
+txtFanta = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=5,justify=LEFT,state=DISABLED,textvariable=E_Fanta)
 txtFanta.grid(row=0,column=1)
-txtLimca = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=6,justify=LEFT,state=DISABLED,textvariable=E_Limca)
+txtLimca = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=5,justify=LEFT,state=DISABLED,textvariable=E_Limca)
 txtLimca.grid(row=1,column=1)
-txtCocaCola = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=6,justify=LEFT,state=DISABLED,textvariable=E_CocaCola)
+txtCocaCola = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=5,justify=LEFT,state=DISABLED,textvariable=E_CocaCola)
 txtCocaCola.grid(row=2,column=1)
-txtPepsi = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=6,justify=LEFT,state=DISABLED,textvariable=E_Pepsi)
+txtPepsi = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=5,justify=LEFT,state=DISABLED,textvariable=E_Pepsi)
 txtPepsi.grid(row=3,column=1)
-txtThumbsUp = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=6,justify=LEFT,state=DISABLED,textvariable=E_ThumbsUp)
+txtThumbsUp = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=5,justify=LEFT,state=DISABLED,textvariable=E_ThumbsUp)
 txtThumbsUp.grid(row=4,column=1)
-txtCoffee = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=6,justify=LEFT,state=DISABLED,textvariable=E_Coffee)
+txtCoffee = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=5,justify=LEFT,state=DISABLED,textvariable=E_Coffee)
 txtCoffee.grid(row=5,column=1)
-txtTea = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=6,justify=LEFT,state=DISABLED,textvariable=E_Tea)
+txtTea = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=5,justify=LEFT,state=DISABLED,textvariable=E_Tea)
 txtTea.grid(row=6,column=1)
-txtBeer = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=6,justify=LEFT,state=DISABLED,textvariable=E_Beer)
+txtBeer = Entry(Drinks_F,font = ("arial",16,"bold"),bd=8,width=5,justify=LEFT,state=DISABLED,textvariable=E_Beer)
 txtBeer.grid(row=7,column=1)
 #========================= FUNCTIONS (MAIN COURSE) =====================#
 def chkDalMakhani():
@@ -210,7 +211,7 @@ def chkDalMakhani():
         txtDalMakhani.configure(state=NORMAL)
         txtDalMakhani.focus()
         txtDalMakhani.delete("0",END)
-        E_DalMakhani.set("0")
+        E_DalMakhani.set("")
     elif(var9.get() == 0):
         txtDalMakhani.configure(state=DISABLED)
         E_DalMakhani.set("0")
@@ -219,7 +220,7 @@ def chkShahiPaneer():
         txtShahiPaneer.configure(state=NORMAL)
         txtShahiPaneer.focus()
         txtShahiPaneer.delete("0",END)
-        E_ShahiPaneer.set("0")
+        E_ShahiPaneer.set("")
     elif(var10.get() == 0):
         txtShahiPaneer.configure(state=DISABLED)
         E_ShahiPaneer.set("0")
@@ -228,7 +229,7 @@ def chkDumAloo():
         txtDumAloo.configure(state=NORMAL)
         txtDumAloo.focus()
         txtDumAloo.delete("0",END)
-        E_DumAloo.set("0")
+        E_DumAloo.set("")
     elif(var11.get() == 0):
         txtDumAloo.configure(state=DISABLED)
         E_DumAloo.set("0")
@@ -237,7 +238,7 @@ def chkIdliSambhar():
         txtIdliSambhar.configure(state=NORMAL)
         txtIdliSambhar.focus()
         txtIdliSambhar.delete("0",END)
-        E_IdliSambhar.set("0")
+        E_IdliSambhar.set("")
     elif(var12.get() == 0):
         txtIdliSambhar.configure(state=DISABLED)
         E_IdliSambhar.set("0")
@@ -246,7 +247,7 @@ def chkPavBhaji():
         txtPavBhaji.configure(state=NORMAL)
         txtPavBhaji.focus()
         txtPavBhaji.delete("0",END)
-        E_PavBhaji.set("0")
+        E_PavBhaji.set("")
     elif(var13.get() == 0):
         txtPavBhaji.configure(state=DISABLED)
         E_PavBhaji.set("0")
@@ -255,7 +256,7 @@ def chkChholeBhature():
         txtChholeBhature.configure(state=NORMAL)
         txtChholeBhature.focus()
         txtChholeBhature.delete("0",END)
-        E_ChholeBhature.set("0")
+        E_ChholeBhature.set("")
     elif(var14.get() == 0):
         txtChholeBhature.configure(state=DISABLED)
         E_ChholeBhature.set("0")
@@ -264,7 +265,7 @@ def chkNaan():
         txtNaan.configure(state=NORMAL)
         txtNaan.focus()
         txtNaan.delete("0",END)
-        E_Naan.set("0")
+        E_Naan.set("")
     elif(var15.get() == 0):
         txtNaan.configure(state=DISABLED)
         E_Naan.set("0")
@@ -273,7 +274,7 @@ def chkTandooriRoti():
         txtTandooriRoti.configure(state=NORMAL)
         txtTandooriRoti.focus()
         txtTandooriRoti.delete("0",END)
-        E_TandooriRoti.set("0")
+        E_TandooriRoti.set("")
     elif(var16.get() == 0):
         txtTandooriRoti.configure(state=DISABLED)
         E_TandooriRoti.set("0")
@@ -312,7 +313,7 @@ txtCustomer.grid(row=0,column=1)
 
 lblMobile = Label(Cost_F,font = ("arial",14,"bold"),text="\tMobile ",bg="powder blue",fg="black")
 lblMobile.grid(row=0,column=2,sticky=W)
-txtMobile = Entry(Cost_F,insertwidth=2,bg="white",bd=7,font = ("arial",14,"bold"),justify=LEFT,fg="black",textvariable=Mobile)
+txtMobile = Entry(Cost_F,width=18,bg="white",bd=7,font = ("arial",14,"bold"),justify=LEFT,fg="black",textvariable=Mobile)
 txtMobile.grid(row=0,column=3)
 """======================= COST INFORMATION =========================="""
 lblCostofDrinks = Label(Cost_F,font = ("arial",14,"bold"),text="Cost of Drinks ",bg="powder blue",fg="black")
@@ -332,22 +333,22 @@ txtServiceCharge.grid(row=3,column=1)
 """====================== PAYMENT INFORMATION ========================"""
 lblPaidTax = Label(Cost_F,font = ("arial",14,"bold"),text="\tPaid Tax\t",bg="powder blue",fg="black")
 lblPaidTax.grid(row=1,column=2,sticky=W)
-txtPaidTax = Entry(Cost_F,insertwidth=2,bg="white",bd=7,font = ("arial",14,"bold"),justify=RIGHT,fg="black",textvariable=PaidTax)
+txtPaidTax = Entry(Cost_F,width=18,bg="white",bd=7,font = ("arial",14,"bold"),justify=RIGHT,fg="black",textvariable=PaidTax)
 txtPaidTax.grid(row=1,column=3)
 
 lblSubTotal = Label(Cost_F,font = ("arial",14,"bold"),text="\tSub Total",bg="powder blue",fg="black")
 lblSubTotal.grid(row=2,column=2,sticky=W)
-txtSubTotal = Entry(Cost_F,insertwidth=2,bg="white",bd=7,font = ("arial",14,"bold"),justify=RIGHT,fg="black",textvariable=SubTotal)
+txtSubTotal = Entry(Cost_F,width=18,bg="white",bd=7,font = ("arial",14,"bold"),justify=RIGHT,fg="black",textvariable=SubTotal)
 txtSubTotal.grid(row=2,column=3)
 
 lblTotalCost = Label(Cost_F,font = ("arial",14,"bold"),text="\tTotal Cost ",bg="powder blue",fg="black")
 lblTotalCost.grid(row=3,column=2,sticky=W)
-txtTotalCost = Entry(Cost_F,insertwidth=2,bg="white",bd=7,font = ("arial",14,"bold"),justify=RIGHT,fg="black",textvariable=TotalCost)
+txtTotalCost = Entry(Cost_F,width=18,bg="white",bd=7,font = ("arial",14,"bold"),justify=RIGHT,fg="black",textvariable=TotalCost)
 txtTotalCost.grid(row=3,column=3)
 
 
 #======================== ENTRY BOX FOR RECEIPT ========================#
-txtReceipt = Text(Receipt_F,width=46,height=15,bg="white",bd=4,font = ("arial",12,"bold"))
+txtReceipt = ScrolledText(Receipt_F,width=47,height=12,bg="white",bd=4,font = ("arial",12,"bold"))
 txtReceipt.grid(row=0,column=0)
 #========================= FUNCTIONS (RECEIPT) =========================#
 def iExit():
@@ -357,7 +358,8 @@ def iExit():
         return
 def Reset():
     Reset = tkinter.messagebox.askyesno("Reset Restaurant System","Are you sure you want to reset?")
-    if(Reset > 0): 
+    if(Reset > 0):
+        text_Input.set("0")
         PaidTax.set("")
         SubTotal.set("")
         TotalCost.set("")
@@ -421,6 +423,7 @@ def Reset():
 
         txtCustomer.delete("0",END)
         txtMobile.delete("0",END)
+        
 def CostofItem():
     Item1=float(E_Fanta.get())
     Item2=float(E_Limca.get())
@@ -454,6 +457,31 @@ def CostofItem():
     TC = "Rs.",str("%.2f"%(PriceofDrinks + PriceofMainCourse + (PriceofDrinks + PriceofMainCourse)*0.05 + TT))
     TotalCost.set(TC)
 def Receipt():
+    Item1=float(E_Fanta.get())
+    Item2=float(E_Limca.get())
+    Item3=float(E_CocaCola.get())
+    Item4=float(E_Pepsi.get())
+    Item5=float(E_ThumbsUp.get())
+    Item6=float(E_Coffee.get())
+    Item7=float(E_Tea.get())
+    Item8=float(E_Beer.get())
+    Item9=float(E_DalMakhani.get())
+    Item10=float(E_ShahiPaneer.get())
+    Item11=float(E_DumAloo.get())
+    Item12=float(E_IdliSambhar.get())
+    Item13=float(E_PavBhaji.get())
+    Item14=float(E_ChholeBhature.get())
+    Item15=float(E_Naan.get())
+    Item16=float(E_TandooriRoti.get())
+    PriceofDrinks = (Item1 * 35)+(Item2 * 35)+(Item3 * 45)+(Item4 * 45)+(Item5 * 50)+(Item6 * 40)+(Item7 * 20)+(Item8 * 100)
+    PriceofMainCourse = (Item9 * 120)+(Item10 * 100)+(Item11 * 95)+(Item12 * 105)+(Item13 * 75)+(Item14 * 50)+(Item15 * 10)+(Item16 * 8)
+    SC = (PriceofDrinks + PriceofMainCourse)*0.05
+    SubTotalofITEMS = (PriceofDrinks + PriceofMainCourse + (PriceofDrinks + PriceofMainCourse)*0.05)
+    Tax = (PriceofDrinks + PriceofMainCourse + (PriceofDrinks + PriceofMainCourse)*0.05)*0.15
+    TT = (PriceofDrinks + PriceofMainCourse + (PriceofDrinks + PriceofMainCourse)*0.05)*0.15
+    TC = (PriceofDrinks + PriceofMainCourse + (PriceofDrinks + PriceofMainCourse)*0.05 + TT)
+
+
     txtReceipt.delete("1.0",END)
     x = random.randint(10000,100000)
     randomRef = str(x)
@@ -483,22 +511,20 @@ def Receipt():
     txtReceipt.insert(END,"Naan:\t\t\t" + E_Naan.get()+"\n")
     txtReceipt.insert(END,"Tandoori Roti:\t\t\t" + E_TandooriRoti.get()+"\n")
     txtReceipt.insert(END,"\n")
-    txtReceipt.insert(END,"Cost of Drinks:\t\t\t" + CostofDrinks.get()+"\n")
-    txtReceipt.insert(END,"Cost of Main Course:\t\t\t" + CostofMainCourse.get()+"\n")
-    txtReceipt.insert(END,"Paid Tax:\t\t\t" + PaidTax.get()+"\n")
-    txtReceipt.insert(END,"Service Charge:\t\t\t" + ServiceCharge.get()+"\n")
-    txtReceipt.insert(END,"Sub Total:\t\t\t" + SubTotal.get()+"\n")
-    txtReceipt.insert(END,"Total:\t\t\t" + TotalCost.get()+"\n")
-    txtReceipt.insert(END,"\n")
-    txtReceipt.insert(END,"\n")
-    txtReceipt.insert(END,"\n")
+    txtReceipt.insert(END,"Cost of Drinks:\t\t\tRs. " + str(PriceofDrinks)+"\n")
+    txtReceipt.insert(END,"Cost of Main Course:\t\t\tRs. " + str(PriceofMainCourse)+"\n")
+    txtReceipt.insert(END,"Paid Tax:\t\t\tRs. " + str(round(Tax,2))+"\n")
+    txtReceipt.insert(END,"Service Charge:\t\t\tRs. "+ str(round(SC,2))+"\n")
+    txtReceipt.insert(END,"Sub Total:\t\t\tRs. " + str(round(SubTotalofITEMS,2))+"\n")
+    txtReceipt.insert(END,"Total:\t\t\tRs. " + str(round(TC,2))+"\n")
+
 #========================= BUTTONS FOR RECEIPT =========================#
-btnTotal = Button(Buttons_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="Total",bg="powder blue",command=CostofItem).grid(row=0,column=0)
-btnReceipt = Button(Buttons_F,padx=18,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=5,text="Receipt",bg="powder blue",command=Receipt).grid(row=0,column=1)
-btnReset = Button(Buttons_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="Reset",bg="powder blue",command=Reset).grid(row=0,column=2)
-btnExit = Button(Buttons_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="Exit",bg="powder blue",command=iExit).grid(row=0,column=3)
+btnTotal = Button(Buttons_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="Total",bg="powder blue",command=CostofItem).grid(row=0,column=0)
+btnReceipt = Button(Buttons_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=5,text="Receipt",bg="powder blue",command=Receipt).grid(row=0,column=1)
+btnReset = Button(Buttons_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="Reset",bg="powder blue",command=Reset).grid(row=0,column=2)
+btnExit = Button(Buttons_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="Exit",bg="powder blue",command=iExit).grid(row=0,column=3)
 #======================= ENTRY BOX FOR CALCULATOR ======================#
-txtDisplay = Entry(Cal_F,width=46,bg="white",bd=4,font = ("arial",12,"bold"),justify=RIGHT,fg="black",textvariable=text_Input)
+txtDisplay = Entry(Cal_F,width=48,bg="white",bd=4,font = ("arial",12,"bold"),justify=RIGHT,fg="black",textvariable=text_Input)
 txtDisplay.grid(row=0,column=0,columnspan=4,pady=1)
 txtDisplay.insert(0,"0")
 #======================== FUNCTIONS (CALCULATOR) =======================#
@@ -521,21 +547,21 @@ def equalbutton():
         text_Input.set("0")
         operator = ""
 #======================== BUTTONS FOR CALCULATOR =======================#
-btn9 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="9",bg="powder blue",command=lambda: clickbutton(9)).grid(row=2,column=0)
-btn8 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="8",bg="powder blue",command=lambda: clickbutton(8)).grid(row=2,column=1)
-btn7 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="7",bg="powder blue",command=lambda: clickbutton(7)).grid(row=2,column=2)
-btnAdd = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="+",bg="white",command=lambda: clickbutton("+")).grid(row=2,column=3)
-btn6 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="6",bg="powder blue",command=lambda: clickbutton(6)).grid(row=3,column=0)
-btn5 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="5",bg="powder blue",command=lambda: clickbutton(5)).grid(row=3,column=1)
-btn4 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="4",bg="powder blue",command=lambda: clickbutton(4)).grid(row=3,column=2)
-btnSubtract = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="-",bg="white",command=lambda: clickbutton("-")).grid(row=3,column=3)
-btn3 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="3",bg="powder blue",command=lambda: clickbutton(3)).grid(row=4,column=0)
-btn2 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="2",bg="powder blue",command=lambda: clickbutton(2)).grid(row=4,column=1)
-btn1 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="1",bg="powder blue",command=lambda: clickbutton(1)).grid(row=4,column=2)
-btnMultiply = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="*",bg="white",command=lambda: clickbutton("*")).grid(row=4,column=3)
-btnClear = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="C",bg="powder blue",command=clearbutton).grid(row=5,column=0)
-btn0 = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="0",bg="powder blue",command=lambda: clickbutton(0)).grid(row=5,column=1)
-btnEqual = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="=",bg="powder blue",command=equalbutton).grid(row=5,column=2)
-btnDivide = Button(Cal_F,padx=16,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="/",bg="white",command=lambda: clickbutton("/")).grid(row=5,column=3)
+btn9 = Button(Cal_F,padx=22,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="9",bg="powder blue",command=lambda: clickbutton(9)).grid(row=2,column=0)
+btn8 = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="8",bg="powder blue",command=lambda: clickbutton(8)).grid(row=2,column=1)
+btn7 = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="7",bg="powder blue",command=lambda: clickbutton(7)).grid(row=2,column=2)
+btnAdd = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="+",bg="white",command=lambda: clickbutton("+")).grid(row=2,column=3)
+btn6 = Button(Cal_F,padx=22,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="6",bg="powder blue",command=lambda: clickbutton(6)).grid(row=3,column=0)
+btn5 = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="5",bg="powder blue",command=lambda: clickbutton(5)).grid(row=3,column=1)
+btn4 = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="4",bg="powder blue",command=lambda: clickbutton(4)).grid(row=3,column=2)
+btnSubtract = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="-",bg="white",command=lambda: clickbutton("-")).grid(row=3,column=3)
+btn3 = Button(Cal_F,padx=22,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="3",bg="powder blue",command=lambda: clickbutton(3)).grid(row=4,column=0)
+btn2 = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="2",bg="powder blue",command=lambda: clickbutton(2)).grid(row=4,column=1)
+btn1 = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="1",bg="powder blue",command=lambda: clickbutton(1)).grid(row=4,column=2)
+btnMultiply = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="*",bg="white",command=lambda: clickbutton("*")).grid(row=4,column=3)
+btnClear = Button(Cal_F,padx=22,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="C",bg="powder blue",command=clearbutton).grid(row=5,column=0)
+btn0 = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="0",bg="powder blue",command=lambda: clickbutton(0)).grid(row=5,column=1)
+btnEqual = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="=",bg="powder blue",command=equalbutton).grid(row=5,column=2)
+btnDivide = Button(Cal_F,padx=20,pady=1,bd=7,fg="black",font = ("arial",16,"bold"),width=4,text="/",bg="white",command=lambda: clickbutton("/")).grid(row=5,column=3)
 
 root.mainloop()
